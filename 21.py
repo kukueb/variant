@@ -1,11 +1,11 @@
-def m(n):
-    return n+1, n**2
+def f(s, n):
+    if s >= 100 or n > 4:
+        return n == 4 or n == 2
+    if n % 2 == 0:
+        return all([f(s+1, n+1), f(s**2, n+1)])
+    return any([f(s+1, n+1), f(s**2, n+1)])
 
-def game(n):
-    if any(x >= 100 for x in m(n)): return "win1"
-    if all(game(n) == "win1" for n in m(n)): return "loss2"
-    if any(game(n) == "loss2" for n in m(n)) : return "win3"
-    if all()
-
-for s in range(2, 99):
-
+for s in range(2, 100):
+    if f(s, 0):
+        print(s)
+        break
