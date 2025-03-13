@@ -1,4 +1,4 @@
-l = open("Вариант/А тут ещё один/9.csv").readlines()
+l = open("9.csv").readlines()
 
 k = 0
 for i in l:

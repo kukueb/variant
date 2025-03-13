@@ -1,10 +1,11 @@
 def f(n):
-    a = str(n)
-    b = [(int(a[0]) + int(a[1])), (int(a[1]) + int(a[2]))]
-    return str(sorted(b)[1]) + str(sorted(b)[0]) 
+    b = bin(n)[2:]
+    b = b + str(b.count("1")%2)
+    b = b + str(b.count("1")%2)
+    return int(b, 2)
 
-for i in range(100, 1000):
+for i in range(1, 100):
     r = f(i)
-    if r == "1711":
-        print(i)
+    if r > 55:
+        print(r)
         break
